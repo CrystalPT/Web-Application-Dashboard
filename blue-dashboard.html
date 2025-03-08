@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataViz Dashboard</title>
+    <link rel="stylesheet" href="blue-dashboard.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&size=128&background=2563EB&color=fff" alt="Profile Image">
+                </div>
+                <div class="profile-info">
+                    <h2>JOHN DOE</h2>
+                    <p class="role">Administrator <i class="fas fa-caret-down"></i></p>
+                </div>
+            </div>
+            
+            <div class="nav-label">Available Options</div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reporting">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reporting</span>
+                            <span class="badge orange">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                            <span class="badge green">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#providers">
+                            <i class="fas fa-user-md"></i>
+                            <span>Providers</span>
+                            <span class="badge blue">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#locations">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Locations</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#inventory">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#patients">
+                            <i class="fas fa-user-injured"></i>
+                            <span>Patients</span>
+                            <span class="badge orange">8</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="header">
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge red">2</span>
+                    </div>
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="app-grid">
+                        <i class="fas fa-th"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Welcome Cards -->
+                <div class="welcome-stats">
+                    <div class="card welcome-card">
+                        <div class="welcome-info">
+                            <h2>Welcome <span class="highlight">John</span></h2>
+                            <p>Number Of Reports</p>
+                        </div>
+                        <div class="stat-number">102</div>
+                    </div>
+                    
+                    <div class="card active-card">
+                        <div class="active-info">
+                            <h2>Active</h2>
+                            <p>Leads/Contacts</p>
+                        </div>
+                        <div class="stat-number">325</div>
+                    </div>
+                </div>
+                
+                <!-- Metrics Cards -->
+                <div class="metrics-grid">
+                    <div class="card metric-card">
+                        <div class="metric-value blue">66,163k</div>
+                        <div class="metric-label">Total Users</div>
+                        <div class="metric-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="change-indicator blue">
+                            <span class="percent">12.5% change</span>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card metric-card">
+                        <div class="metric-value orange">3,490K</div>
+                        <div class="metric-label">Revenue</div>
+                        <div class="metric-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="change-indicator orange">
+                            <span class="percent">9.2% change</span>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card metric-card">
+                        <div class="metric-value green">8,372K</div>
+                        <div class="metric-label">Total Orders</div>
+                        <div class="metric-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="change-indicator green">
+                            <span class="percent">5.8% change</span>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card metric-card">
+                        <div class="metric-value yellow">5,355K</div>
+                        <div class="metric-label">Bounce Rate</div>
+                        <div class="metric-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="change-indicator yellow">
+                            <span class="percent">2.3% change</span>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Orders & Analytics -->
+                <div class="content-grid">
+                    <div class="card orders-card">
+                        <div class="card-header">
+                            <h2>ACTIVE ORDERS</h2>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Item Name</th>
+                                        <th>Quantity</th>
+                                        <th>Product Code</th>
+                                        <th>Vendor</th>
+                                        <th>Order Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3091</td>
+                                        <td>Arch</td>
+                                        <td>1</td>
+                                        <td>11105</td>
+                                        <td>Impuls</td>
+                                        <td>8/27/2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3090</td>
+                                        <td>Form Fit Ankle</td>
+                                        <td>1</td>
+                                        <td>79-92070</td>
+                                        <td>Ossur</td>
+                                        <td>8/27/2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3087</td>
+                                        <td>Form Fit Wrist</td>
+                                        <td>1</td>
+                                        <td>NC16220</td>
+                                        <td>Ossur</td>
+                                        <td>8/27/2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3082</td>
+                                        <td>Rebound Knee</td>
+                                        <td>2</td>
+                                        <td>1024-4</td>
+                                        <td>DJO, LLC</td>
+                                        <td>8/27/2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3086</td>
+                                        <td>Universal Arm Sling</td>
+                                        <td>2</td>
+                                        <td>703058-PL</td>
+                                        <td>Drive Medical</td>
+                                        <td>8/27/2023</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card analytics-card">
+                        <div class="card-header">
+                            <h2>ANALYTICS</h2>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-dot blue"></span>
+                                    <span>Customers</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot purple"></span>
+                                    <span>Users</span>
+                                </div>
+                            </div>
+                            <canvas id="analyticsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="blue-dashboard.js"></script>
+</body>
+</html>
